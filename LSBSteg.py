@@ -16,7 +16,6 @@ Options:
 
 import cv2
 import docopt
-# import numpy as np
 
 
 class SteganographyException(Exception):
@@ -129,39 +128,6 @@ class LSBSteg():
             i += 1
             unhideTxt += chr(int(tmp,2)) # Every chars concatenated to str
         return unhideTxt
-
-    # 没用上的废弃函数
-    # def encode_image(self, imtohide):
-    #     w = imtohide.width
-    #     h = imtohide.height
-    #     # 限制大小
-    #     if self.width*self.height*self.nbchannels < w*h*imtohide.channels:
-    #         raise SteganographyException("Carrier image not big enough to hold all the datas to steganography")
-    #     binw = self.binary_value(w, 16) # Width coded on to byte so width up to 65536
-    #     binh = self.binary_value(h, 16)
-    #     self.put_binary_value(binw) # Put width
-    #     self.put_binary_value(binh) # Put height
-    #     for h in range(imtohide.height): # Iterate the hole image to put every pixel values
-    #         for w in range(imtohide.width):
-    #             for chan in range(imtohide.channels):
-    #                 val = imtohide[h,w][chan]
-    #                 self.put_binary_value(self.byteValue(int(val)))
-    #     return self.image
-
-    # 没用上的废弃函数
-    # def decode_image(self):
-    #     # 创建画布
-    #     width = int(self.read_bits(16),2) # Read 16bits and convert it in int
-    #     height = int(self.read_bits(16),2)
-    #     unhideimg = np.zeros((width,height, 3), np.uint8) # Create an image in which we will put all the pixels read
-    #
-    #     for h in range(height):
-    #         for w in range(width):
-    #             for chan in range(unhideimg.channels):
-    #                 val = list(unhideimg[h,w])
-    #                 val[chan] = int(self.read_byte(),2) # Read the value
-    #                 unhideimg[h,w] = tuple(val)
-    #     return unhideimg
 
     # 加密时调用的函数
     def encode_binary(self, data):
