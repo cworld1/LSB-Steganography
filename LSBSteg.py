@@ -16,7 +16,7 @@ Options:
 
 import cv2
 import docopt
-import numpy as np
+# import numpy as np
 
 
 class SteganographyException(Exception):
