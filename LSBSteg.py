@@ -200,7 +200,7 @@ def main():
         # 对于 JPG 图像的特殊性，需要转换为 PNG
         if out_ext in lossy_formats:
             out_f = out_f + ".png"
-            print("Output file changed to ", out_f)
+            print("Warning: output file changed to ", out_f)
 
         data = open(args["--file"], "rb").read()
 
