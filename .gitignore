@@ -199,5 +199,6 @@ tags
 ### Customize ###
 
 # Test file
+/output
 /test
 /question
